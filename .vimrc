@@ -2,7 +2,7 @@
 " Pro zobrazeni <leader>:
 "   :echo mapleader
 " Zmena: let mapleader = ","
-
+set shell=/bin/bash
 " Setting up Vundle - the vim plugin bundler
     let iCanHazVundle=1
     let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
@@ -10,7 +10,11 @@
         echo "Installing Vundle.."
         echo ""
         silent !mkdir -p ~/.vim/bundle
+        !sudo apt install git curl
         silent !git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/vundle
+        " Fonts:
+        silent !curl -sS https://webi.sh/nerdfont | sh
+        silent !curl -sS https://webi.sh/vim-devicons | sh
         let iCanHazVundle=0
     endif
 
@@ -20,7 +24,7 @@
 
     call vundle#begin()
     Plugin 'VundleVim/Vundle.vim'
-    Plugin 'https://github.com/tpope/vim-fugitive'
+    Plugin 'tpope/vim-fugitive'
     Plugin 'scrooloose/nerdtree'
     Plugin 'mattn/emmet-vim'
     Plugin 'dense-analysis/ale'
@@ -32,13 +36,13 @@
     Plugin 'davidhalter/jedi-vim'
     Plugin 'jmcantrell/vim-virtualenv'
     Plugin 'majutsushi/tagbar'
-    Plugin 'kqito/vim-easy-replace'
+    "Plugin 'kqito/vim-easy-replace'
     Plugin 'ryanoasis/vim-devicons'
     "Plugin 'powerline/powerline'
     
     " GIT:
     Plugin 'Xuyuanp/nerdtree-git-plugin'
-    Plugin 'rbong/vim-flog'
+    "problemy - Plugin 'rbong/vim-flog'
     
     Plugin 'airblade/vim-gitgutter'
     " Use fontawesome icons as signs
@@ -117,4 +121,3 @@
 
     " devicons: reasonable defaults from webinstall.dev/vim-devicons
     source ~/.vim/plugins/devicons.vim
-
