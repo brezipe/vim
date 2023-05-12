@@ -40,8 +40,6 @@ petr@bfc3cf11ba4b:/$ git clone https://github.com/brezipe/vim.git
 petr@bfc3cf11ba4b:~$ cp vim/.vimrc .
 
 petr@bfc3cf11ba4b:~$ vim
------------------------------
-petr@bfc3cf11ba4b:~$ vim
 Installing Vundle..
 :!sudo apt install git curl
 Reading package lists... Done
