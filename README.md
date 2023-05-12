@@ -22,7 +22,15 @@ root@bfc3cf11ba4b:/# apt upgrade
 
 root@bfc3cf11ba4b:/# apt install sudo vim git inetutils-ping exuberant-ctags
 root@bfc3cf11ba4b:/# vim /etc/sudoers
+```
+```
+# User privilege specification
+root    ALL=(ALL:ALL) ALL
+petr    ALL=(ALL:ALL) ALL
 
+# Members of the admin group may gain root privileges
+```
+```
 root@bfc3cf11ba4b:/# su petr
 $ bash
 petr@bfc3cf11ba4b:/$ cd ~
