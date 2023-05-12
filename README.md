@@ -5,6 +5,7 @@ Můj vimrc
 -------------------
 Doporučuji:
 https://github.com/brezipe/awesome-cheatsheets/blob/master/tools/vim.txt
+
 https://vimawesome.com/
 
 Pro spuštění v docker kontejneru ubuntu na vyzkoušení:
