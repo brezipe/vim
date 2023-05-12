@@ -121,3 +121,5 @@ set shell=/bin/bash
 
     " devicons: reasonable defaults from webinstall.dev/vim-devicons
     source ~/.vim/plugins/devicons.vim
+    set hidden
+

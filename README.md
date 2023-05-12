@@ -63,18 +63,6 @@ Processing triggers for libc-bin (2.35-0ubuntu3.1) ...
 Press ENTER or type command to continue
 ---------------------------------------------------------
 
-Done! 
-CtrlSpace requires 'hidden' option enabled!
-[everforest] Generated /home/petr/.vim/bundle/vim-color-forest-night/after/syntax
-Press ENTER or type command to continue
-
----------------------------------------------------------
-Shift + i
-.vimrc
-
-Na konec (nebo kdekoliv mimo podmínku) přidat:
-set hidden
-
 ------------
 RESTART vim a je to.
 ------------
