@@ -58,7 +58,7 @@ set shell=/bin/bash
     Plugin 'matze/vim-move'
     Plugin 'phpactor/phpactor'
     
-    Plugin 'vim-ctrlspace/vim-ctrlspace'
+    "Plugin 'vim-ctrlspace/vim-ctrlspace'
 
     if iCanHazVundle == 0
         echo "Installing Vundles, please ignore key map error messages"
@@ -121,5 +121,4 @@ set shell=/bin/bash
 
     " devicons: reasonable defaults from webinstall.dev/vim-devicons
     source ~/.vim/plugins/devicons.vim
-    set hidden
 
