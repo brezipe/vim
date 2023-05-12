@@ -9,7 +9,7 @@ https://vimawesome.com/
 
 Pro spuštění v docker kontejneru ubuntu na vyzkoušení:
 -------------------
-
+```
 docker pull ubuntu
 docker run -ti --rm ubuntu /bin/bash
 
@@ -84,4 +84,5 @@ petr@bfc3cf11ba4b:~$ git clone https://github.com/brezipe/PDFtoImage.git
 
 petr@bfc3cf11ba4b:~$ cd PDFtoImage/
 petr@bfc3cf11ba4b:~/PDFtoImage$ vim
+```
 
