@@ -37,7 +37,6 @@ set shell=/bin/bash
     Plugin 'jmcantrell/vim-virtualenv'
     Plugin 'majutsushi/tagbar'
     "Plugin 'kqito/vim-easy-replace'
-    Plugin 'ryanoasis/vim-devicons'
     "Plugin 'powerline/powerline'
     
     " GIT:
@@ -59,6 +58,9 @@ set shell=/bin/bash
     Plugin 'phpactor/phpactor'
     
     "Plugin 'vim-ctrlspace/vim-ctrlspace'
+
+    " jako posledni:
+    Plugin 'ryanoasis/vim-devicons'
 
     if iCanHazVundle == 0
         echo "Installing Vundles, please ignore key map error messages"
