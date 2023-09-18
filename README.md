@@ -70,6 +70,9 @@ Press ENTER or type command to continue
 ---------------------------------------------------------
 
 ------------
+V případě problémů s jedi-vim:
+sudo apt-get install vim-python-jedi
+------------
 RESTART vim a je to.
 ------------
 
