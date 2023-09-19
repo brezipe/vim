@@ -10,7 +10,7 @@ set shell=/bin/bash
         echo "Installing Vundle.."
         echo ""
         silent !mkdir -p ~/.vim/bundle
-        !sudo apt install git curl
+        !sudo apt install git curl vim-python-jedi
         silent !git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/vundle
         " Fonts:
         silent !curl -sS https://webi.sh/nerdfont | sh
