@@ -79,6 +79,10 @@ set shell=/bin/bash
     set expandtab
     set hidden
 
+    " gn = next buffer, gp = previous buffer
+    map gn :bnext<cr>
+    map gp :bprevious<cr>
+
     " Zobrazit 
     let g:airline#extensions#tabline#enabled = 1
     let g:airline_powerline_fonts = 1
