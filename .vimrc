@@ -10,7 +10,7 @@ set shell=/bin/bash
         echo "Installing Vundle.."
         echo ""
         silent !mkdir -p ~/.vim/bundle
-        !sudo apt install git curl vim-python-jedi
+        !sudo apt install git curl vim-python-jedi exuberant-ctags
         silent !git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/vundle
         " Fonts:
         silent !curl -sS https://webi.sh/nerdfont | sh
@@ -79,9 +79,13 @@ set shell=/bin/bash
     set expandtab
     set hidden
 
-    " gn = next buffer, gp = previous buffer
-    map gn :bnext<cr>
-    map gp :bprevious<cr>
+    " bb = buffer list, bn = next buffer, bv = previous buffer
+    map bb :buffers<cr>
+    map bn :bnext<cr>
+    map bv :bprevious<cr>
+
+    map tz :tabnext<cr>
+    map tr :tabprev<cr>
 
     " Zobrazit 
     let g:airline#extensions#tabline#enabled = 1
