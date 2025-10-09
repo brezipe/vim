@@ -10,7 +10,7 @@ set shell=/bin/bash
         echo "Installing Vundle.."
         echo ""
         silent !mkdir -p ~/.vim/bundle
-        !sudo apt install git curl vim-python-jedi exuberant-ctags
+        !sudo apt install git curl vim-python-jedi exuberant-ctags 
         silent !git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/vundle
         " Fonts:
         silent !curl -sS https://webi.sh/nerdfont | sh
@@ -72,18 +72,18 @@ set shell=/bin/bash
 
     set encoding=UTF-8
     set mouse=a
-    set guifont=DroidSansMono\ Nerd\ Font\ 11
+    set guifont=DroidSansMono_Nerd_Font:h11
     set nu
     set tabstop=4
     set shiftwidth=4
     set expandtab
     set hidden
 
-    " bb = buffer list, bn = next buffer, bv = previous buffer
-    map bb :buffers<cr>
+    " bn = next buffer, bv = previous buffer
     map bn :bnext<cr>
     map bv :bprevious<cr>
-
+    map bb :buffers<cr>
+    
     map tz :tabnext<cr>
     map tr :tabprev<cr>
 
@@ -95,13 +95,30 @@ set shell=/bin/bash
     filetype plugin indent on " load filetype plugins/indent settings
     "colorscheme solarized
     syntax on                      " enable syntax
+    
+    " open NERDTree when vim opens
     autocmd VimEnter * NERDTree
+    " mirror NERDTree on tabs
     autocmd BufWinEnter * silent NERDTreeMirror
+    
+    " Exit Vim if NERDTree is the only window remaining in the only tab.
+    autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
+    
+    " Close the tab if NERDTree is the only window remaining in it.
+    autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
+    
+    " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+    autocmd BufEnter * if winnr() == winnr('h') && bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+    
+    " Open the existing NERDTree on each new tab.
+    autocmd BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silent NERDTreeMirror | endif
+
     nnoremap <leader>n :NERDTreeFocus<CR>
     nnoremap <C-n> :NERDTree<CR>
     nnoremap <C-t> :NERDTreeToggle<CR>
     nmap <F8> :TagbarToggle<CR>
-" Setting up Vundle - the vim plugin bundler end
+    " Setting up Vundle - the vim plugin bundler end
 
     nnoremap <leader>gs :Magit<CR>   " git status
     nnoremap <Leader>gb :Gblame<CR>  " git blame
@@ -131,4 +148,3 @@ set shell=/bin/bash
 
     " devicons: reasonable defaults from webinstall.dev/vim-devicons
     source ~/.vim/plugins/devicons.vim
-
