@@ -32,12 +32,27 @@ set shell=/bin/bash
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'junegunn/gv.vim'
-    Plugin 'nvie/vim-flake8'
+    "Plugin 'nvie/vim-flake8'
     Plugin 'davidhalter/jedi-vim'
-    Plugin 'jmcantrell/vim-virtualenv'
+    "Plugin 'jmcantrell/vim-virtualenv'
     Plugin 'majutsushi/tagbar'
     "Plugin 'kqito/vim-easy-replace'
     "Plugin 'powerline/powerline'
+    
+    "PopUp terminal F12
+    "https://vimawesome.com/plugin/vim-floaterm
+    Plugin 'voldikss/vim-floaterm'
+    let g:floaterm_width = 0.9
+    let g:floaterm_height = 0.9
+    nnoremap   <silent>   <F12>   :FloatermToggle<CR>
+    tnoremap   <silent>   <F12>   <C-\><C-n>:FloatermToggle<CR>
+    
+    " Codeium AI
+    "https://github.com/Exafunction/windsurf.vim
+    "api key (:Codeium Auth)
+    "eKxa9AbXi5EMHJDkp7gyhkAiwSJjSDCZb6jJlIaTceI
+    "https://www.codeium.com/profile?response_type=token&redirect_uri=vim-show-auth-token&state=a&scope=openid%20profile%20email&redirect_parameters_type=query
+    Plugin 'Exafunction/windsurf.vim'
     
     " GIT:
     Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -55,10 +70,8 @@ set shell=/bin/bash
 
     " netestovano:
     Plugin 'matze/vim-move'
-    Plugin 'phpactor/phpactor'
+    "Plugin 'phpactor/phpactor'
     
-    "Plugin 'vim-ctrlspace/vim-ctrlspace'
-
     " jako posledni:
     Plugin 'ryanoasis/vim-devicons'
 
@@ -72,7 +85,7 @@ set shell=/bin/bash
 
     set encoding=UTF-8
     set mouse=a
-    set guifont=DroidSansMono_Nerd_Font:h11
+    set guifont=DroidSansMono\ Nerd\ Font\ 11
     set nu
     set tabstop=4
     set shiftwidth=4
@@ -102,7 +115,7 @@ set shell=/bin/bash
     autocmd BufWinEnter * silent NERDTreeMirror
     
     " Exit Vim if NERDTree is the only window remaining in the only tab.
-    autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
+    autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | FloatermKill! | call feedkeys(":quit\<CR>:\<BS>") | endif
     
     " Close the tab if NERDTree is the only window remaining in it.
     autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
