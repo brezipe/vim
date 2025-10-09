@@ -114,6 +114,10 @@ set shell=/bin/bash
     " Open the existing NERDTree on each new tab.
     autocmd BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silent NERDTreeMirror | endif
 
+    " Start NERDTree. If a file is specified, move the cursor to its window.
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+
     nnoremap <leader>n :NERDTreeFocus<CR>
     nnoremap <C-n> :NERDTree<CR>
     nnoremap <C-t> :NERDTreeToggle<CR>
@@ -148,3 +152,10 @@ set shell=/bin/bash
 
     " devicons: reasonable defaults from webinstall.dev/vim-devicons
     source ~/.vim/plugins/devicons.vim
+    set termwinsize=6x0
+    nnoremap <leader>x :bo term<cr>
+    
+    " nezalamovat dlouhe radky:
+    "set nowrap
+    "set wrap
+
