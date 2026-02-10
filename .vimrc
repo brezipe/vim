@@ -172,3 +172,5 @@ set shell=/bin/bash
     "set nowrap
     "set wrap
 
+    " W - write as sudo
+    command! W sudo tee % > /dev/null
