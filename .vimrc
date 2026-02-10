@@ -173,4 +173,4 @@ set shell=/bin/bash
     "set wrap
 
     " W - write as sudo
-    command! W sudo tee % > /dev/null
+    command! W w !sudo tee % > /dev/null
